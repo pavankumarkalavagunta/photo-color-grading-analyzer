@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Photo Color Grading Analyzer</display-name>
+    <description>
+        Full-Stack Photography Analytics Engine powered by JavaServer Pages,
+        Jakarta Servlets, and Python OpenCV.
+    </description>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Health Servlet -->
+    <servlet>
+        <servlet-name>HealthServlet</servlet-name>
+        <servlet-class>com.photoanalyzer.servlet.HealthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HealthServlet</servlet-name>
+        <url-pattern>/health</url-pattern>
+    </servlet-mapping>
+
+    <!-- Analysis Servlet -->
+    <servlet>
+        <servlet-name>AnalysisServlet</servlet-name>
+        <servlet-class>com.photoanalyzer.servlet.AnalysisServlet</servlet-class>
+        <multipart-config>
+            <max-file-size>26214400</max-file-size>       <!-- 25 MB -->
+            <max-request-size>31457280</max-request-size>  <!-- 30 MB -->
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnalysisServlet</servlet-name>
+        <url-pattern>/analyze</url-pattern>
+        <url-pattern>/report</url-pattern>
+    </servlet-mapping>
+
+    <!-- History Servlet -->
+    <servlet>
+        <servlet-name>HistoryServlet</servlet-name>
+        <servlet-class>com.photoanalyzer.servlet.HistoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HistoryServlet</servlet-name>
+        <url-pattern>/history</url-pattern>
+    </servlet-mapping>
+
+    <!-- Delete Servlet -->
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>com.photoanalyzer.servlet.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <!-- REST API Analysis Servlet -->
+    <servlet>
+        <servlet-name>ApiAnalysisServlet</servlet-name>
+        <servlet-class>com.photoanalyzer.servlet.ApiAnalysisServlet</servlet-class>
+        <multipart-config>
+            <max-file-size>26214400</max-file-size>
+            <max-request-size>31457280</max-request-size>
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ApiAnalysisServlet</servlet-name>
+        <url-pattern>/api/analysis/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session configuration -->
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+</web-app>

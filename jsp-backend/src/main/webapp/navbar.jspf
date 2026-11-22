@@ -1,0 +1,17 @@
+<%@ page pageEncoding="UTF-8" %>
+<header class="navbar">
+    <div class="container nav-container">
+        <a href="${pageContext.request.contextPath}/" class="nav-brand">
+            <span style="font-size: 1.5rem;">📷</span>
+            <span>Photo <span class="gradient-text">Color Grading</span> Analyzer</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="${pageContext.request.contextPath}/" class="nav-link">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/upload.jsp" class="nav-link">Upload Photo</a></li>
+                <li><a href="${pageContext.request.contextPath}/history" class="nav-link">History</a></li>
+                <li><a href="${pageContext.request.contextPath}/health" target="_blank" class="nav-link"><span class="badge badge-green">Engine Online</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

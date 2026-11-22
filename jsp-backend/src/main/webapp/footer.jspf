@@ -1,0 +1,11 @@
+<%@ page pageEncoding="UTF-8" %>
+<footer class="footer">
+    <div class="container">
+        <p style="margin-bottom: 0.5rem; color: var(--text-secondary); font-weight: 500;">
+            Photo Color Grading Analyzer &bull; Full-Stack Photography Computer Vision
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.8rem;">
+            Powered by <strong>JSP (JavaServer Pages)</strong> &bull; <strong>Jakarta Servlets 6</strong> &bull; <strong>Tomcat 10</strong> &bull; <strong>Python 3.12 + OpenCV Engine</strong>
+        </p>
+    </div>
+</footer>
